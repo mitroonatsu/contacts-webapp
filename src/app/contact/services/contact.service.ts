@@ -8,22 +8,8 @@ import {Observable} from 'rxjs';
 })
 export class ContactService {
 
-  // contacts: Contact [];
-
   constructor(private contactHttpService: ContactHttpService) {
-    /*
-    this.contacts = [];
-    this.contacts.push(new Contact(1, 'Mitro', 'Onatsu'));
-    this.contacts.push(new Contact(2, 'Muumi', 'Peikko'));
-    this.contacts.push(new Contact(3, 'Pikku', 'Myy'));
-    */
   }
-
-  /*
-    getContacts(): Contact[] {
-      return this.contacts;
-    }
-    */
 
   getContacts(): Observable<Contact[]> {
     return this.contactHttpService.get();
