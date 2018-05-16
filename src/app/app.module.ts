@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import { ContactListComponent } from './contact/contact-list/contact-list.component';
+import {ContactListComponent} from './contact/contact-list/contact-list.component';
+import {ContactService} from './contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { ContactListComponent } from './contact/contact-list/contact-list.compon
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
