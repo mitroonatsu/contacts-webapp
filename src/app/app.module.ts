@@ -6,9 +6,15 @@ import {FormsModule} from '@angular/forms';
 import {ContactListComponent} from './contact/contact-list/contact-list.component';
 import {ContactService} from './contact/services/contact.service';
 import {ContactHttpService} from './contact/services/contact-http.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ContactDetailComponent} from './contact/contact-detail/contact-detail.component';
 import {RouterModule, Routes} from '@angular/router';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MaterialComponentsModule} from './ui/material-components/material-components.module';
+import { AvatarModule } from 'ng2-avatar';
+import { TextToColorPipe } from './contact/pipes/text-to-color.pipe';
+import {NgPipesModule} from 'ngx-pipes';
+
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -20,13 +26,18 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    TextToColorPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MaterialComponentsModule,
+    FlexLayoutModule,
+    AvatarModule.forRoot(),
+    NgPipesModule
   ],
   providers: [
     ContactService,
