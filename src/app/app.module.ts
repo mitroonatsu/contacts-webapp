@@ -16,6 +16,8 @@ import { TextToColorPipe } from './contact/pipes/text-to-color.pipe';
 import {NgPipesModule} from 'ngx-pipes';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material';
+import { ToolbarComponent } from './ui/toolbar/toolbar.component';
+import {ToolbarService} from './ui/toolbar/toolbar.service';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContactListComponent,
     ContactDetailComponent,
-    TextToColorPipe
+    TextToColorPipe,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     ContactService,
-    ContactHttpService
+    ContactHttpService,
+    ToolbarService
   ],
   bootstrap: [AppComponent]
 })
