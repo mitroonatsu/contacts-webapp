@@ -1,6 +1,5 @@
 <mat-sidenav-container class="cw-sidenav-container">
   <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false" class="cw-sidenav">
-    <!-- Sidenav content -->
     <div>
       <div fxLayout="column" fxLayoutAlign="center center" class="cw-sidenav-user-area">
         <div>
@@ -16,9 +15,8 @@
     </div>
   </mat-sidenav>
   <div fxFlexFill class = "cw-sidenav-content">
-    <cw-toolbar (onMenuClick)="sidenav.toggle()"> </cw-toolbar>
+    <cw-toolbar (MenuClick)="sidenav.toggle()"> </cw-toolbar>
     <div class="cw-app-container">
-      <!-- App -->
       <router-outlet></router-outlet>
     </div>
   </div>

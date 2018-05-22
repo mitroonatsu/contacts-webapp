@@ -23,6 +23,7 @@ export class ContactDetailComponent implements OnInit {
   ngOnInit() {
     this.toolbar.toolbarOptions.next(new ToolbarOptions('Contact',
       [new ToolbarAction(this.onEdit, 'edit')]));
+
     const contactId = this.route.snapshot.paramMap.get('id');
 
     if (contactId == null) {
@@ -43,10 +44,11 @@ export class ContactDetailComponent implements OnInit {
     this.router.navigate(['/contacts']);
   }
 
-  onSave(): void{
+  onSave(): void {
     console.log('TODO: Save');
   }
-  onEdit(){
+
+  onEdit() {
     console.log('TODO: activate/deactivate edit mode');
   }
 }
