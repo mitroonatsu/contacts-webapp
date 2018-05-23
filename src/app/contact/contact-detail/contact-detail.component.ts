@@ -40,7 +40,7 @@ export class ContactDetailComponent implements OnInit {
 
 
       this.contactService.getContactById(this.contactId).subscribe(response => {
-        this.contactId = response;
+        this.contact = response;
         console.log(this.contact);
       }, error => {
         console.error('Getting contact failed!');
@@ -64,12 +64,8 @@ export class ContactDetailComponent implements OnInit {
       // Create contact
       this.editingEnabled = false;
       this.contactService.createContact(this.contact).subscribe(response => {
-        this.contact = response;
-        console.log(this.contact);
-        const toolbarActions: ToolbarAction[] = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
-        this.toolbar.toolbarOptions.next(new ToolbarOptions(
-          'Contact', toolbarActions
-        ));
+        console.log(response);
+        this.router.navigate(['/contacts']);
       });
     } else {
       // Edit contact
@@ -85,4 +81,12 @@ export class ContactDetailComponent implements OnInit {
     this.editingEnabled = !this.editingEnabled;
 
   }
+
+  onDelete() {
+    this.editingEnabled = false;
+    this.contactService.deleteContact(this.contact).subscribe(() => {
+      this.router.navigate(['/contacts']);
+    });
+  }
 }
+
