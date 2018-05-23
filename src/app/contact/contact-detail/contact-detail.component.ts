@@ -50,13 +50,8 @@ export class ContactDetailComponent implements OnInit {
     }
 
     this.toolbar.toolbarOptions.next(new ToolbarOptions(
-      'Contact', toolbarActions
+      true, 'Contact', toolbarActions
     ));
-  }
-
-
-  onNavigateBack(): void {
-    this.router.navigate(['/contacts']);
   }
 
   onSave(): void {
