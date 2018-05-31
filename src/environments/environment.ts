@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpointUrl: 'http://localhost:50412/api/contacts'
+  apiEndpointUrl: 'https://contactswebapimo.azurewebsites.net'
 };
 
 /*
