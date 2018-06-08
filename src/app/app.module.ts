@@ -11,16 +11,19 @@ import {ContactDetailComponent} from './contact/contact-detail/contact-detail.co
 import {RouterModule, Routes} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialComponentsModule} from './ui/material-components/material-components.module';
-import { AvatarModule } from 'ng2-avatar';
-import { TextToColorPipe } from './contact/pipes/text-to-color.pipe';
+import {AvatarModule} from 'ng2-avatar';
+import {TextToColorPipe} from './contact/pipes/text-to-color.pipe';
 import {NgPipesModule} from 'ngx-pipes';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material';
-import { ToolbarComponent } from './ui/toolbar/toolbar.component';
+import {ToolbarComponent} from './ui/toolbar/toolbar.component';
 import {ToolbarService} from './ui/toolbar/toolbar.service';
-import { LoginComponent } from './user/login/login.component';
+import {LoginComponent} from './user/login/login.component';
 import {AuthenticationService} from './user/services/authentication.service';
 import {TokenService} from './user/services/token.service';
+import {DialogComponent} from './dialog/dialog.component';
+import {DialogService} from './dialog/dialog.service';
+
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -37,7 +40,8 @@ const appRoutes: Routes = [
     ContactDetailComponent,
     TextToColorPipe,
     ToolbarComponent,
-    LoginComponent
+    LoginComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +60,11 @@ const appRoutes: Routes = [
     ContactHttpService,
     ToolbarService,
     AuthenticationService,
-    TokenService
+    TokenService,
+    DialogService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule {
 }
