@@ -1,20 +1,23 @@
-<mat-card class="cw-card-layout">
-  <div fxLayout="row" fxLayoutAlign="center start">
+<mat-card class="cw-card-layout-inside">
+  <div fxLayout="row" fxLayoutAlign="center center">
     <div fxLayout="column">
       <mat-error *ngIf="loginFailed">{{errorMessage}}</mat-error>
       <mat-form-field floatPlaceholder="auto">
+        <mat-icon matPrefix> perm_identity</mat-icon>
         <input matInput [(ngModel)]="userCredentials.username"
                type="text"
                required
                placeholder="Username">
       </mat-form-field>
       <mat-form-field floatPlaceholder="auto">
+        <mat-icon matPrefix>lock_outline</mat-icon>
         <input matInput [(ngModel)]="userCredentials.password"
                type="password"
                required
                placeholder="Password">
       </mat-form-field>
-      <button mat-raised-button (click)="onSignIn()" color="accent">SIGN IN</button>
+      <button mat-raised-button (click)="onSignIn()" class="cw-button">SIGN IN</button>
     </div>
   </div>
 </mat-card>
+

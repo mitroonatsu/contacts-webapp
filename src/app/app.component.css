@@ -7,12 +7,12 @@
 
 .cw-sidenav {
   width: 200px;
-
 }
 
 .cw-app-container {
   height: 100%;
   overflow: auto;
+  background-color: #154E8F;
 }
 
 .cw-sidenav-avatar {
@@ -26,6 +26,6 @@
   padding: 8px;
 }
 
-.cw-sidenav-content{
+.cw-sidenav-content {
   overflow: hidden;
 }

@@ -1,0 +1,10 @@
+.cw-card-layout-inside {
+  margin: 24px;
+  width: 800px;
+  height: 500px;
+}
+
+.cw-button {
+  background-color: #154E8F;
+  color: white;
+}
